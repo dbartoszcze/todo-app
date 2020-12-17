@@ -1,24 +1,38 @@
 import React from 'react';
 
 import '../styles/Element.css'
-const Element = ({ title, description, id, isImportant, toggleTask, removeTask }) => {
+const Element = ({ title, description, id, isFinished, isImportant, toggleProperty, removeTask }) => {
 
 
-    const handleToggle = () => {
-        toggleTask(id);
+    const handleToggleImportant = () => {
+        toggleProperty(id, 'isImportant');
+    }
+
+    const handleToogleFinished = () => {
+        toggleProperty(id, 'isFinished')
     }
 
     const handleRemove = () => {
         removeTask(id);
     }
 
+
+
     return (
-        <div className={isImportant ? 'element important' : 'element'}>
-            <h3 className='taskHeader'>{title}</h3>
+        <div className={isFinished ? 'element finished' : 'element'}>
+            <h4 className={isImportant ? 'taskHeader important' : 'taskHeader'}>{title} {isImportant ? ' (!!!)' : ''}</h4>
             <p className='taskDescription'>{description}</p>
 
             <div className='actionBtns'>
-                <button onClick={handleToggle}>{isImportant ? 'Zmień na zwykły' : 'Zmień na ważny'}</button>
+                <button onClick={handleToogleFinished}>
+                    {isFinished ? 'Restore' : 'Set as done'}
+                </button>
+
+                {!isFinished &&
+                    <button onClick={handleToggleImportant}>
+                        {isImportant ? 'Normal' : 'Important'}
+                    </button>
+                }
                 <button onClick={handleRemove}>Usuń</button>
             </div>
         </div>

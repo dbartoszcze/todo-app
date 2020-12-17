@@ -11,13 +11,15 @@ const App = () => {
         id: 123,
         title: 'Task1',
         description: 'Desc1',
-        isImportant: true
+        isImportant: true,
+        isFinished: false
     },
     {
         id: 124,
         title: 'Task2',
         description: 'Desc2',
-        isImportant: false
+        isImportant: false,
+        isFinished: true
     }]);
 
     const handleAddTask = ({ title, description, isImportant }) => {
@@ -31,14 +33,15 @@ const App = () => {
         setTasks(prev => [...prev, task])
     }
 
-    const handleToogleImportant = (id) => {
+    const handleToogleProperty = (id, property) => {
         setTasks(prevTasks => prevTasks.filter(task => {
             if (task.id === id) {
-                task.isImportant = !task.isImportant
+                task[property] = !task[property]
             }
             return task;
         }))
     }
+
 
     const handleRemoveTask = (id) => {
         setTasks(prevTasks => prevTasks.filter(task => task.id !== id))
@@ -49,7 +52,7 @@ const App = () => {
             <AddTask addTask={handleAddTask} />
             {  tasks.length > 0 &&
                 <TaskList
-                    toggleTask={handleToogleImportant}
+                    toggleProperty={handleToogleProperty}
                     removeTask={handleRemoveTask}
                     tasks={tasks}
                 />}
