@@ -31,6 +31,15 @@ const App = () => {
         setTasks(prev => [...prev, task])
     }
 
+    const handleToogleImportant = (id) => {
+        setTasks(prevTasks => prevTasks.filter(task => {
+            if (task.id === id) {
+                task.isImportant = !task.isImportant
+            }
+            return task;
+        }))
+    }
+
     const handleRemoveTask = (id) => {
         setTasks(prevTasks => prevTasks.filter(task => task.id !== id))
     }
@@ -38,7 +47,12 @@ const App = () => {
     return (
         <div className='app'>
             <AddTask addTask={handleAddTask} />
-            {  tasks.length > 0 && <TaskList removeTask={handleRemoveTask} tasks={tasks} />}
+            {  tasks.length > 0 &&
+                <TaskList
+                    toggleTask={handleToogleImportant}
+                    removeTask={handleRemoveTask}
+                    tasks={tasks}
+                />}
         </div>
     );
 }
