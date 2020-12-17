@@ -13,7 +13,7 @@ const TaskList = ({ tasks }) => {
     )
     return (
         <div className="taskList">
-            Lista tasków:
+            <h2>Lista zadań:</h2>
             <div>
                 {taskList}
             </div>
