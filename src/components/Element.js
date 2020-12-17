@@ -33,7 +33,7 @@ const Element = ({ title, description, id, isFinished, isImportant, toggleProper
                         {isImportant ? 'Normal' : 'Important'}
                     </button>
                 }
-                <button onClick={handleRemove}>Usuń</button>
+                <button onClick={handleRemove}>Remove</button>
             </div>
         </div>
     );

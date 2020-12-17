@@ -15,7 +15,7 @@ const TaskList = ({ tasks, toggleProperty, removeTask }) => {
     )
     return (
         <div className="taskList">
-            <h2>Lista zadań:</h2>
+            <h2>List of tasks:</h2>
             <div>
                 {taskList}
             </div>

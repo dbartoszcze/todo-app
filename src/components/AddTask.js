@@ -46,31 +46,31 @@ const AddTask = ({ addTask }) => {
             <form onSubmit={handleSubmit} className='taskForm'>
 
                 <label className='inputLabel'>
-                    Nazwa zadania:
+                    Task title:
                 <input
                         className='textInput'
                         type="text"
                         value={title}
                         onChange={handleChange}
                         name="title"
-                        placeholder='Tytuł...'
+                        placeholder='Title...'
                         required
                     />
                 </label>
                 <label className="inputLabel" >
-                    Opis:
+                    Description:
                 <input
                         className='textInput'
                         type="text"
                         value={description}
                         onChange={handleChange}
                         name="description"
-                        placeholder='Opis..'
+                        placeholder='Description..'
                     />
                 </label>
 
                 <label className='inputLabel'>
-                    Czy ważne zadanie?
+                    Important task?
                     <input
                         type="checkbox"
                         checked={isImportant}
@@ -82,7 +82,7 @@ const AddTask = ({ addTask }) => {
                 </label>
 
                 <div className='formBtns'>
-                    <button className='addBtn'>Dodaj zadanie</button>
+                    <button className='addBtn'>Add task</button>
                 </div>
             </form>
 

@@ -7,20 +7,7 @@ import '../styles/App.css'
 
 const App = () => {
 
-    const [tasks, setTasks] = useState([{
-        id: 123,
-        title: 'Task1',
-        description: 'Desc1',
-        isImportant: true,
-        isFinished: false
-    },
-    {
-        id: 124,
-        title: 'Task2',
-        description: 'Desc2',
-        isImportant: false,
-        isFinished: true
-    }]);
+    const [tasks, setTasks] = useState([]);
 
     const handleAddTask = ({ title, description, isImportant }) => {
         const task = {
