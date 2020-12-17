@@ -38,7 +38,7 @@ const App = () => {
     return (
         <div className='app'>
             <AddTask addTask={handleAddTask} />
-            <TaskList removeTask={handleRemoveTask} tasks={tasks} />
+            {  tasks.length > 0 && <TaskList removeTask={handleRemoveTask} tasks={tasks} />}
         </div>
     );
 }
