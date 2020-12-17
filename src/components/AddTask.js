@@ -29,8 +29,16 @@ const AddTask = ({ addTask }) => {
         e.preventDefault();
 
         if (title) {
-            addTask({title, description, isImportant});
+            addTask({ title, description, isImportant });
+
+            resetInputs();
         }
+    }
+
+    const resetInputs = () => {
+        setTitle('');
+        setDescription('')
+        setIsImportant('')
     }
 
     return (
