@@ -4,11 +4,12 @@ import React from 'react';
 import Element from './Element'
 
 import '../styles/TaskList.css'
-const TaskList = ({ tasks, toggleTask }) => {
+const TaskList = ({ tasks, toggleTask, removeTask }) => {
     const taskList = tasks.map(task =>
         <Element
             key={task.id}
             toggleTask={toggleTask}
+            removeTask={removeTask}
             {...task}
         />
     )

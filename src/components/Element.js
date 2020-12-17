@@ -1,11 +1,15 @@
 import React from 'react';
 
 import '../styles/Element.css'
-const Element = ({ title, description, id, isImportant, toggleTask }) => {
+const Element = ({ title, description, id, isImportant, toggleTask, removeTask }) => {
 
 
     const handleToggle = () => {
         toggleTask(id);
+    }
+
+    const handleRemove = () => {
+        removeTask(id);
     }
 
     return (
@@ -15,7 +19,7 @@ const Element = ({ title, description, id, isImportant, toggleTask }) => {
 
             <div className='actionBtns'>
                 <button onClick={handleToggle}>{isImportant ? 'Zmień na zwykły' : 'Zmień na ważny'}</button>
-                <button>Usuń</button>
+                <button onClick={handleRemove}>Usuń</button>
             </div>
         </div>
     );
