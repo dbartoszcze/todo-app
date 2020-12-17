@@ -1,0 +1,42 @@
+.element{
+    padding:20px 50px;
+}
+
+.important {
+    border-left: 5px solid #f00;
+    background-color: #fee;
+}
+
+.taskHeader {
+    border-bottom: 1px solid #000;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 3px 0;
+    text-align: center;
+}
+
+.taskDescription {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    margin: 1.5px 0;
+}
+
+.actionBtns{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.actionBtns button{
+    background-color: #fff;
+    border: 2px solid #222;
+    cursor: pointer;
+    font-size: 12px;
+    margin-left: 5px;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+.actionBtns button:hover{
+    background-color: #ccc;
+    border-radius: 0;
+}
