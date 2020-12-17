@@ -3,11 +3,48 @@
     justify-content: center;
 }
 
-.addTask form {
+.taskForm{
     display: flex;
     flex-direction: column;
+    padding:20px 20px 0 20px;
+    width: 100%;
 }
 
-.addTask input {
+
+.inputLabel{
+    display: flex;
+    font-family: 'Courier New', Courier, monospace;
+    justify-content: space-between;
+    width:100%;
+}
+
+
+.inputLabel input {
     margin-bottom:  10px;
+}
+
+.textInput {
+    font-family: 'Courier New', Courier, monospace;
+    width: 200px;
+}
+
+.formBtns{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.addBtn {
+    background-color: #fff;
+    border: 2px solid #222;
+    border-radius: 0;
+    cursor: pointer;
+    font-size: 12px;
+    margin-left: 5px;
+    padding: 10px;
+    text-transform: uppercase;
+    width: 30%;
+}
+
+.addBtn:hover{
+    background-color: #ccc;
 }
