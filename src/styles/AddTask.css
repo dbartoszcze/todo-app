@@ -2,3 +2,12 @@
     display: flex;
     justify-content: center;
 }
+
+.addTask form {
+    display: flex;
+    flex-direction: column;
+}
+
+.addTask input {
+    margin-bottom:  10px;
+}
