@@ -4,12 +4,14 @@ import React from 'react';
 import Element from './Element'
 
 import '../styles/TaskList.css'
-const TaskList = ({ tasks, toggleProperty, removeTask }) => {
+import { useSelector } from 'react-redux';
+const TaskList = () => {
+
+    const tasks = useSelector(store => store.tasks)
+
     const taskList = tasks.map(task =>
         <Element
             key={task.id}
-            toggleProperty={toggleProperty}
-            removeTask={removeTask}
             {...task}
         />
     )

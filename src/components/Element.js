@@ -1,19 +1,25 @@
 import React from 'react';
 
+
+import { useDispatch } from 'react-redux';
+import { toggleProperty, removeTask } from '../redux/actions/appActions'
+
 import '../styles/Element.css'
-const Element = ({ title, description, id, isFinished, isImportant, toggleProperty, removeTask }) => {
+const Element = ({ title, description, id, isFinished, isImportant }) => {
+    const dispatch = useDispatch();
 
 
     const handleToggleImportant = () => {
-        toggleProperty(id, 'isImportant');
+        dispatch(toggleProperty(id, 'isImportant'))
     }
 
     const handleToogleFinished = () => {
-        toggleProperty(id, 'isFinished')
+        dispatch(toggleProperty(id, 'isFinished'))
     }
 
     const handleRemove = () => {
-        removeTask(id);
+        dispatch(removeTask(id))
+        // removeTask(id);
     }
 
 

@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
+import { addTask } from '../redux/actions/appActions'
 
 import '../styles/AddTask.css'
-const AddTask = ({ addTask }) => {
+const AddTask = () => {
 
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [isImportant, setIsImportant] = useState(false);
+    const dispatch = useDispatch();
+
 
     const handleChange = (e) => {
         switch (e.target.name) {
@@ -29,7 +33,7 @@ const AddTask = ({ addTask }) => {
         e.preventDefault();
 
         if (title) {
-            addTask({ title, description, isImportant });
+            dispatch(addTask({ title, description, isImportant }));
 
             resetInputs();
         }
