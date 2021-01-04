@@ -1,49 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
 
 import { addTask } from '../redux/actions/appActions'
-
+import useFormState from '../hooks/useFormState'
 import '../styles/AddTask.css'
 const AddTask = () => {
-
-    const [title, setTitle] = useState('');
-    const [description, setDescription] = useState('');
-    const [isImportant, setIsImportant] = useState(false);
+    const { title, description, isImportant, handleChange, resetInputs } = useFormState();
     const dispatch = useDispatch();
-
-
-    const handleChange = (e) => {
-        switch (e.target.name) {
-            case 'title':
-                setTitle(e.target.value)
-                return;
-            case 'description':
-                setDescription(e.target.value)
-                return;
-            case 'isImportant':
-                setIsImportant(e.target.checked)
-                return;
-            default:
-                console.warn('Wrong input name!')
-                return;
-        }
-    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
         if (title) {
             dispatch(addTask({ title, description, isImportant }));
-
             resetInputs();
         }
     }
 
-    const resetInputs = () => {
-        setTitle('');
-        setDescription('')
-        setIsImportant('')
-    }
 
     return (
         <div className='addTask'>
